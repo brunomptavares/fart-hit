@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C66AC8B5-732B-CB78-1A48-9022ED6BBD31}</ProjectGuid>
+    <ProjectGuid>{0286FFCE-9933-11AA-AAEB-339D546ACC57}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,33 +62,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BackgroundScript.cs" />
+    <Compile Include="Assets\Background.cs" />
+    <Compile Include="Assets\Character.cs" />
+    <Compile Include="Assets\InputController.cs" />
+    <Compile Include="Assets\SceneObject.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>F:/projectos/programa-fixe/fart-hit-a-gravar/fart-hit-a-gravar/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
