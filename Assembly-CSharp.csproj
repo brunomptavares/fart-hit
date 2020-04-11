@@ -68,6 +68,7 @@
     <Compile Include="Assets\InputController.cs" />
     <Compile Include="Assets\InteractableSceneObject.cs" />
     <Compile Include="Assets\SceneObject.cs" />
+    <Compile Include="Assets\ViewportUtils.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
