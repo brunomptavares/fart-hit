@@ -63,8 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Background.cs" />
+    <Compile Include="Assets\Ball.cs" />
     <Compile Include="Assets\Character.cs" />
     <Compile Include="Assets\InputController.cs" />
+    <Compile Include="Assets\InteractableSceneObject.cs" />
     <Compile Include="Assets\SceneObject.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/projectos/programa-fixe/fart-hit-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
