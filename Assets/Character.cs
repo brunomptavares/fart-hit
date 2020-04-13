@@ -4,7 +4,7 @@ public class Character : SceneObject
 {
 
     //State stuff
-    private enum CharacterState { INITIAL, IDLE, FALLING, FARTING, BEFORE_FARTING, COLLISION, EAT }
+    public enum CharacterState { INITIAL, IDLE, FALLING, FARTING, BEFORE_FARTING, COLLISION, EAT }
     private CharacterState state = CharacterState.INITIAL;
 
     //Target
@@ -12,8 +12,8 @@ public class Character : SceneObject
     private Vector2 targetDir;
 
     //Status
-    private float speed = 15f;
-    private float acceleration = 5f;
+    private float speed = 16f;
+    private float acceleration = 4f;
 
     //Timers
     private float timerAdjustAngle;
@@ -50,7 +50,7 @@ public class Character : SceneObject
                 }
                 break;
             case CharacterState.FARTING:
-                fart();
+                //FixedUpdate
                 break;
             case CharacterState.COLLISION:
                 break;
@@ -61,20 +61,19 @@ public class Character : SceneObject
 
     private void FixedUpdate()
     {
-        switch (state)
+        switch(state)
         {
             case CharacterState.FARTING:
-                //Set velocity
-                Vector3 vel = targetDir.normalized * (speed * Time.fixedDeltaTime * 1f);
-                //Show direction
-                Debug.DrawRay(rb.position, targetDir, Color.red);
-                rb.MovePosition(rb.position + vel);
+                fart();
             break;
         }
     }
 
     public void setTarget(Vector2 pos)
     {
+        //Reset angle ajustment timer
+        timerAdjustAngle = 0;
+        //Set target
         target = pos;
         //Calculate direction
         targetDir = new Vector3(target.x, target.y, 0) - rb.position;
@@ -89,16 +88,17 @@ public class Character : SceneObject
 
     public void fart()
     {
-        //Reset angle ajustment timer
-        timerAdjustAngle = 0;
+        //Set velocity
+        Vector3 vel = targetDir.normalized * speed;
+        rb.velocity = Vector3.Lerp(rb.velocity, vel, acceleration * Time.deltaTime);
+        //Show direction
+        Debug.DrawRay(rb.position, targetDir, Color.red);
         //Stop if reach target
         if (targetDir.magnitude < transform.localScale.y && state == CharacterState.FARTING) stopFarting();
     }
 
     public void stopFarting()
     {
-        //Reset angle ajustment timer
-        //timerAdjustAngle = 0;
         //Reset velocity
         //rb.velocity = Vector3.zero;
         if (state == CharacterState.FARTING) {
@@ -112,5 +112,10 @@ public class Character : SceneObject
         if (timerAdjustAngle > 1f) return;
         rb.rotation = Quaternion.Lerp(rb.rotation, Quaternion.AngleAxis(-rb.rotation.z, Vector3.forward), timerAdjustAngle);
         timerAdjustAngle += Time.deltaTime;
+    }
+
+    public CharacterState getState()
+    {
+        return state;
     }
 }

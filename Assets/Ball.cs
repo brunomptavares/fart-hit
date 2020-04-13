@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Ball : InteractableSceneObject
 {
-    private Vector3 initialPos;
     //Components and GameObjects
     private ViewportUtils vu;
 
@@ -12,9 +11,6 @@ public class Ball : InteractableSceneObject
     new void Awake()
     {
         base.Awake();
-        initialPos = transform.position;
-        vu = GameObject.FindGameObjectWithTag("Utils").GetComponent<ViewportUtils>();
-        Debug.Log(vu);
     }
 
     void Start()
@@ -25,10 +21,9 @@ public class Ball : InteractableSceneObject
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -vu.cameraHeight / 2)
-        {
+        if (vu.isOutOfBoundsBottom(transform.position)) {
             rb.isKinematic = true;
-            rb.position = initialPos;
+            rb.position = new Vector3(0, Camera.main.transform.position.y + vu.cameraHeight / 2, 0);
             rb.isKinematic = false;
         }
     }
@@ -36,6 +31,10 @@ public class Ball : InteractableSceneObject
     public override void activate()
     {
         Debug.Log("BALL HIT");
+    }
+
+    public float getRadius() {
+       return GetComponent<SphereCollider>().radius;
     }
 
 }

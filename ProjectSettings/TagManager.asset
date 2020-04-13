@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Character
   - Ball
+  - Utils
   layers:
   - Default
   - TransparentFX
