@@ -7,6 +7,7 @@ public class Ball : InteractableSceneObject
     //Components and GameObjects
     private ViewportUtils vu;
 
+
     // Start is called before the first frame update
     new void Awake()
     {
@@ -26,6 +27,12 @@ public class Ball : InteractableSceneObject
             rb.position = new Vector3(0, Camera.main.transform.position.y + vu.cameraHeight / 2, 0);
             rb.isKinematic = false;
         }
+    }
+
+    void FixedUpdate()
+    {
+        //
+        rb.AddForce(new Vector3(0,-1.25f,0));
     }
 
     public override void activate()
